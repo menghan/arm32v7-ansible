@@ -1,6 +1,6 @@
 # ref:https://github.com/William-Yeh/docker-ansible/blob/master/ubuntu16.04-onbuild/Dockerfile
 
-FROM resin/armhf-python:2.7-slim
+FROM resin/armv7hf-python:2.7-slim
 
 MAINTAINER Menghan Zheng <menghan412@gmail.com>
 
