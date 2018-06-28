@@ -1,6 +1,6 @@
 # ref:https://github.com/William-Yeh/docker-ansible/blob/master/ubuntu16.04-onbuild/Dockerfile
 
-FROM resin/armv7hf-python:2.7
+FROM resin/armv7hf-python:2-slim
 
 MAINTAINER Menghan Zheng <menghan412@gmail.com>
 
@@ -39,7 +39,7 @@ ONBUILD  WORKDIR  /tmp
 ONBUILD  COPY  .  /tmp
 ONBUILD  RUN  \
               echo "===> Diagnosis: host information..."  && \
-              ansible -c local -m setup all
+              ANSIBLE_GATHER_TIMEOUT=100 ansible -c local -m setup all
 
 
 
