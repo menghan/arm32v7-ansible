@@ -39,7 +39,7 @@ ONBUILD  WORKDIR  /tmp
 ONBUILD  COPY  .  /tmp
 ONBUILD  RUN  \
               echo "===> Diagnosis: host information..."  && \
-              ANSIBLE_GATHER_TIMEOUT=100 ansible -c local -m setup all
+              ansible -c local -m setup -a 'gather_timeout=0' all
 
 
 
